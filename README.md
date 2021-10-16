@@ -7,4 +7,5 @@ To use:
 2) Add your user email address to the 'user' variable
 3) Generate an API token for your user and add it to the token variable
 4) Set the number of issues you want to create in the 'number_of_issues' variable
-5) Execute the script to trigger issue creation
+5) Set project_key and issuetype variables
+6) Execute the script to trigger issue creation
