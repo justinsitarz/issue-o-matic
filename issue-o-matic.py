@@ -12,11 +12,13 @@ token = '<your api token here' # generate one here: https://support.atlassian.co
 b_auth = base64.b64encode(bytes('{}:{}'.format(user, token), 'utf-8'))
 auth = b_auth.decode('utf-8')
 number_of_issues = 100
+issuetype = '<your issue type here'
+project_key = '<your project key here>'
 
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': 'Basic {}'.format(auth)}
 
 
 for x in range(number_of_issues):
-	body = {"fields":{"summary":"My summary","issuetype":{"name": "Task"},"project":{"key":"OP8"}}}
+	body = {"fields":{"summary":"My summary","issuetype":{"name": issuetype},"project":{"key":project_key}}}
 	res = requests.post(url, data=json.dumps(body), headers=headers)
 	print(res.json())
